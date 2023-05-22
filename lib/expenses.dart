@@ -13,20 +13,7 @@ class Expenses extends StatefulWidget {
 }
 
 class _ExpenseState extends State<Expenses> {
-  final List<Expense> _registeredExpenses = [
-    Expense(
-      title: 'Flutter',
-      amount: 19.99,
-      date: DateTime.now(),
-      category: Category.work,
-    ),
-    Expense(
-      title: 'Cinema',
-      amount: 14.49,
-      date: DateTime.now(),
-      category: Category.leisure,
-    ),
-  ];
+  final List<Expense> _registeredExpenses = [];
   void openOverlay() {
     showModalBottomSheet(
       constraints: BoxConstraints(
@@ -72,8 +59,8 @@ class _ExpenseState extends State<Expenses> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
-    print(width);
-    print(height);
+    // print(width);
+    // print(height);
     Widget expenseCheck = _registeredExpenses.isEmpty
         ? const Center(child: Text("No Expenses found. Add some now!"))
         : ExpenseList(
